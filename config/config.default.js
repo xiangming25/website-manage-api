@@ -23,6 +23,31 @@ module.exports = appInfo => {
     // myAppName: 'egg',
   };
 
+  config.mysql = {
+    app: true, // 挂载到 app 下面
+    agent: false,
+    client: {
+      host: '127.0.0.1',
+      port: 3306,
+      user: 'root',
+      password: 'root123456',
+      database: 'website-manage',
+    },
+  };
+
+  config.sequelize = {
+    dialect: 'mysql', // 指定方言
+    host: '127.0.0.1',
+    port: 3306,
+    username: 'root',
+    password: 'root123456',
+    database: 'website-manage',
+    define: {
+      timestamps: false,
+      freezeTableName: true, // 冻结表名称，使用原始的表名称，不会因为使用了 sequelize 就发生变化
+    },
+  };
+
   return {
     ...config,
     ...userConfig,
