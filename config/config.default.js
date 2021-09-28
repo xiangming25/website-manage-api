@@ -20,7 +20,8 @@ module.exports = appInfo => {
 
   // add your user config here
   const userConfig = {
-    // myAppName: 'egg',
+    salt: 'website-manage-salt',
+    redisExpire: 60 * 60 * 24,
   };
 
   config.mysql = {
@@ -46,6 +47,10 @@ module.exports = appInfo => {
       timestamps: false,
       freezeTableName: true, // 冻结表名称，使用原始的表名称，不会因为使用了 sequelize 就发生变化
     },
+  };
+
+  config.jwt = {
+    secret: 'website',
   };
 
   return {
