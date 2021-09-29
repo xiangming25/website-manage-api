@@ -86,6 +86,12 @@ class UserController extends BaseController {
     });
     this.success(result);
   }
+
+  async detail() {
+    const { ctx } = this;
+    const user = await ctx.service.user.getUser(ctx.params('username'));
+    this.success(this.parseResult(ctx, user));
+  }
 }
 
 module.exports = UserController;
