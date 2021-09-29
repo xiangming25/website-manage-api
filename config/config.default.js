@@ -24,6 +24,12 @@ module.exports = appInfo => {
     redisExpire: 60 * 60 * 24,
   };
 
+  config.security = {
+    csrf: {
+      enable: false,
+    },
+  };
+
   config.mysql = {
     app: true, // 挂载到 app 下面
     agent: false,
@@ -51,6 +57,15 @@ module.exports = appInfo => {
 
   config.jwt = {
     secret: 'website',
+  };
+
+  config.redis = {
+    client: {
+      port: 6379,
+      host: '127.0.0.1',
+      password: 'redis123456',
+      db: 0, // 选择默认的数据库 0
+    },
   };
 
   return {

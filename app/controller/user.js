@@ -24,7 +24,7 @@ class UserController extends BaseController {
 
   async register() {
     const { ctx, app } = this;
-    const params = ctx.params;
+    const params = ctx.params();
     const user = await ctx.service.user.getUser(params.username);
     if (user) {
       this.error('用户已经存在');

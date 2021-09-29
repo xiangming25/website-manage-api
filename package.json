@@ -7,9 +7,11 @@
     "declarations": true
   },
   "dependencies": {
+    "dayjs": "^1.10.7",
     "egg": "^2.15.1",
     "egg-jwt": "^3.1.7",
     "egg-mysql": "^3.0.0",
+    "egg-redis": "^2.4.0",
     "egg-scripts": "^2.11.0",
     "egg-sequelize": "^6.0.0",
     "md5": "^2.3.0",
@@ -28,7 +30,8 @@
     "node": ">=10.0.0"
   },
   "scripts": {
-    "start": "egg-scripts start --daemon --title=egg-server-website-manage-api",
+    "start": "yarn dev",
+    "start:prod": "egg-scripts start --daemon --title=egg-server-website-manage-api",
     "stop": "egg-scripts stop --title=egg-server-website-manage-api",
     "dev": "egg-bin dev",
     "debug": "egg-bin debug",
