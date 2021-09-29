@@ -30,6 +30,11 @@ module.exports = appInfo => {
     },
   };
 
+  config.cors = {
+    origin: '*',
+    allowMethods: [ 'GET', 'POST', 'DELETE', 'PUT' ],
+  };
+
   config.mysql = {
     app: true, // 挂载到 app 下面
     agent: false,
@@ -80,7 +85,7 @@ module.exports = appInfo => {
     waitTime: 10 * 1000, // 报请求频繁后，需要间隔多久才能再次请求
   };
 
-  config.allowHosts = [ 'localhost:8001', '127.0.0.1:8001' ];
+  config.allowHosts = [ 'localhost:8001', 'localhost:8000', '127.0.0.1:8001', '127.0.0.1:8000' ];
 
   config.interfaceCache = {
     expire: 60 * 60 * 24, // 设置缓存时间(秒)

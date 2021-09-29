@@ -22,6 +22,11 @@ exports.redis = {
   package: 'egg-redis',
 };
 
+exports.cors = {
+  enable: true,
+  package: 'egg-cors',
+};
+
 exports.auth = {
   enable: true,
   path: path.join(__dirname, '../lib/plugin/egg-auth'),

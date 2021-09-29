@@ -89,7 +89,7 @@ class UserController extends BaseController {
 
   async detail() {
     const { ctx } = this;
-    const user = await ctx.service.user.getUser(ctx.params('username'));
+    const user = await ctx.service.user.getUser(ctx.username);
     this.success(this.parseResult(ctx, user));
   }
 }
