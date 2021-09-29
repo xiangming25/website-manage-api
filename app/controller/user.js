@@ -49,6 +49,24 @@ class UserController extends BaseController {
       this.error('用户注册失败！');
     }
   }
+
+  async login() {
+    const { ctx } = this;
+    const { username, password } = ctx.params();
+    const user = await ctx.service.user.getUser(username, password);
+    if (user) {
+      const token = await this.jwtSign({
+        id: user.id,
+        username: user.username,
+      });
+      this.success({
+        ...this.parseResult(ctx, user),
+        token,
+      });
+    } else {
+      this.error('该用户不存在');
+    }
+  }
 }
 
 module.exports = UserController;
