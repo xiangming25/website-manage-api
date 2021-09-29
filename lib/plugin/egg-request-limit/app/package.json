@@ -1,0 +1,6 @@
+{
+  "name": "egg-request-limit",
+  "eggPlugin": {
+    "name": "requestLimit"
+  }
+}

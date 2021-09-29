@@ -26,3 +26,8 @@ exports.auth = {
   enable: true,
   path: path.join(__dirname, '../lib/plugin/egg-auth'),
 };
+
+exports.requestLimit = {
+  enable: true,
+  path: path.join(__dirname, '../lib/plugin/egg-request-limit'),
+};

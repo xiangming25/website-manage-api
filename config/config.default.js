@@ -68,8 +68,16 @@ module.exports = appInfo => {
     },
   };
 
+  // 授权
   config.auth = {
     exclude: [ '/api/user/login', '/api/user/register' ],
+  };
+
+  // 请求限流
+  config.requestLimit = {
+    maxCount: 10, // 请求接口的数量
+    time: 3 * 1000, // 间隔时间
+    waitTime: 10 * 1000, // 报请求频繁后，需要间隔多久才能再次请求
   };
 
   return {
