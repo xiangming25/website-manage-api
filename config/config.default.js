@@ -56,7 +56,7 @@ module.exports = appInfo => {
   };
 
   config.jwt = {
-    secret: 'website',
+    secret: 'website-manage-secret', // jwt 需要用到的密钥
   };
 
   config.redis = {
