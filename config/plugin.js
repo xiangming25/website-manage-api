@@ -41,3 +41,8 @@ exports.notFound = {
   enable: true,
   path: path.join(__dirname, '../lib/plugin/egg-not-found'),
 };
+
+exports.interfaceCache = {
+  enable: true,
+  path: path.join(__dirname, '../lib/plugin/egg-interface-cache'),
+};

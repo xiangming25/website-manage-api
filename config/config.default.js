@@ -82,6 +82,11 @@ module.exports = appInfo => {
 
   config.allowHosts = [ 'localhost:8001', '127.0.0.1:8001' ];
 
+  config.interfaceCache = {
+    expire: 60 * 60 * 24, // 设置缓存时间(秒)
+    include: [ '/api/user/detail' ], // 设置缓存的接口
+  };
+
   return {
     ...config,
     ...userConfig,

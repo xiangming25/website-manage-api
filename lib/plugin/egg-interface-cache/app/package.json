@@ -1,0 +1,6 @@
+{
+  "name": "egg-interface-cache",
+  "eggPlugin": {
+    "name": "interfaceCache"
+  }
+}
