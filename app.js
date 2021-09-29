@@ -6,6 +6,7 @@ module.exports = app => {
     ...mids,
     'requestLimit',
     'allowHosts',
+    'notFound',
     'auth',
   ];
 };

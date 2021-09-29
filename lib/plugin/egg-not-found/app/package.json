@@ -1,0 +1,6 @@
+{
+  "name": "egg-not-found",
+  "eggPlugin": {
+    "name": "notFound"
+  }
+}
