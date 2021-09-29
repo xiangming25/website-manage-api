@@ -67,6 +67,16 @@ class UserController extends BaseController {
       this.error('该用户不存在');
     }
   }
+
+  async logout() {
+    const { ctx, app } = this;
+    try {
+      app.redis.del(ctx.username);
+      this.success(true);
+    } catch (error) {
+      this.error('退出登录失败！');
+    }
+  }
 }
 
 module.exports = UserController;
