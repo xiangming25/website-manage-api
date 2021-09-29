@@ -1,5 +1,7 @@
 'use strict';
 
+const path = require('path');
+
 exports.mysql = {
   enable: true,
   package: 'egg-mysql',
@@ -18,4 +20,9 @@ exports.jwt = {
 exports.redis = {
   enable: true,
   package: 'egg-redis',
+};
+
+exports.auth = {
+  enable: true,
+  path: path.join(__dirname, '../lib/plugin/egg-auth'),
 };

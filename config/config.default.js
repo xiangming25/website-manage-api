@@ -68,6 +68,10 @@ module.exports = appInfo => {
     },
   };
 
+  config.auth = {
+    exclude: [ '/api/user/login', '/api/user/register' ],
+  };
+
   return {
     ...config,
     ...userConfig,
