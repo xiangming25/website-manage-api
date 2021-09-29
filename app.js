@@ -5,6 +5,7 @@ module.exports = app => {
   app.config.coreMiddleware = [
     ...mids,
     'requestLimit',
+    'allowHosts',
     'auth',
   ];
 };

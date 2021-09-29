@@ -80,6 +80,8 @@ module.exports = appInfo => {
     waitTime: 10 * 1000, // 报请求频繁后，需要间隔多久才能再次请求
   };
 
+  config.allowHosts = [ 'localhost:8001', '127.0.0.1:8001' ];
+
   return {
     ...config,
     ...userConfig,
